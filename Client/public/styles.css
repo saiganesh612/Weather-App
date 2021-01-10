@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body, html {
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: 300;
+  background-image: url("./images/alfred-kenneally-zhRl90nvhtI-unsplash.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  width: 100%;
+  height: 100%;
+}
+
+header h1{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 5em;
+    font-weight: 500;
+    font-family: auto;
+    padding-bottom: 15px;
+}
+
+@media (max-width: 768px){
+    header h1{
+        font-size: 4em
+    }
+}
+
+@media (max-width: 320px){
+    header h1{
+        font-size: 3em
+    }
+}
+
+.form-group{
+    width: 335px;
+    margin: auto;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.form-group input{
+    font-family:cursive;
+    outline: none;
+    border: 1px solid rgba(252, 252, 252, 0.8);
+    background-color: rgba(252, 252, 252, 0.2);
+    color: white;
+    font-size: larger;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.form-group TextField label{
+    color: white;
+}
+
+.form-group button{
+    cursor: pointer;
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: cursive;
+    background-color: white;
+    color: #50a3a3;
+    font-size: larger;
+    border: 1px solid rgba(252, 252, 252, 0.8);
+}
+
+h1{
+    text-align: center;
+    font-family: emoji;
+    margin: 15px auto;
+}
+
+.weather{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
+.card{
+    width: auto;
+    height: auto;
+    margin: 15px;
+}
+
+.card-actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: black;
+}
+
+footer p{
+    margin: auto;
+}
