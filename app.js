@@ -5,13 +5,10 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const app = express();
 const axios = require('axios');
+const path = require("path");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("This is our backend");
-})
 
 app.post("/weather", async (req, res) => {
     try {
@@ -23,6 +20,16 @@ app.post("/weather", async (req, res) => {
         res.status(500).send("The place your are looking was not found :(");
     }
 })
+
+// Serve static assests if in production
+if (process.env.NODE_ENV === "production") {
+    //Set static folder
+    app.use(express.static(path.join(__dirname, "Client/build")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "Client", "build", "index.html"))
+    })
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
