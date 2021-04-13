@@ -6,9 +6,17 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const path = require("path");
+const rateLimit = require("express-rate-limit");
+
+const limiter = new rateLimit({
+    windowMs: 1000 * 60 * 60 * 1,
+    max: 5,
+    message: "To many requests from this IP"
+})
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(limiter)
 
 app.post("/weather", async (req, res) => {
     try {
